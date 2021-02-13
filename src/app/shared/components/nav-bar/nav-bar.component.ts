@@ -11,9 +11,5 @@ export class NavBarComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.fetchTotalCharacters();
-  }
-
-  fetchTotalCharacters() {}
+  ngOnInit(): void {}
 }
