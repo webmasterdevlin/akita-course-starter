@@ -21,8 +21,8 @@ export class VillainsComponent implements OnInit {
     this.formBuilderInit();
   }
 
-  handleNavigateHeroDetail(id: string) {
-    this.router.navigateByUrl("/heroes/hero-detail/" + id);
+  handleNavigateVillainDetail(id: string) {
+    this.router.navigateByUrl("/villains/villain-detail/" + id);
   }
 
   private formBuilderInit(): void {
