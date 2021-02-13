@@ -9,7 +9,6 @@ import { Router } from "@angular/router";
   styleUrls: ["./villains.component.css"],
 })
 export class VillainsComponent implements OnInit, OnDestroy {
-  trackerReset = "0";
   villains: any[];
   itemForm: FormGroup;
   editedForm: FormGroup;
@@ -21,37 +20,10 @@ export class VillainsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.formBuilderInit();
-    this.fetchVillains();
   }
 
   // this is needed in untilDestroyed
   ngOnDestroy(): void {}
-
-  fetchVillains() {}
-
-  removeVillain(id: string) {}
-
-  onSave() {
-    // stop here if form is invalid
-    if (this.itemForm.invalid) {
-      return;
-    }
-
-    this.itemForm.reset();
-  }
-
-  onUpdate() {
-    // stop here if form is invalid
-    if (this.editedForm.invalid) {
-      return;
-    }
-
-    this.editingTracker = this.trackerReset;
-  }
-
-  goToVillainDetail(id: string) {
-    this.router.navigateByUrl("/villains/villain-detail/" + id);
-  }
 
   private formBuilderInit(): void {
     this.itemForm = this.fb.group({

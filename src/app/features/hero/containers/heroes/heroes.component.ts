@@ -9,7 +9,6 @@ import { Router } from "@angular/router";
   styleUrls: ["./heroes.component.css"],
 })
 export class HeroesComponent implements OnInit, OnDestroy {
-  trackerReset = "0";
   heroes: any[];
   itemForm: FormGroup;
   editedForm: FormGroup;
@@ -21,34 +20,10 @@ export class HeroesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.formBuilderInit();
-    this.fetchHeroes();
-    this.loadingAndErrorInit();
   }
 
   // this is needed in untilDestroyed
   ngOnDestroy(): void {}
-
-  fetchHeroes() {}
-
-  removeHero(id: string) {}
-
-  onSave() {
-    // stop here if form is invalid
-    if (this.itemForm.invalid) {
-      return;
-    }
-
-    this.itemForm.reset();
-  }
-
-  onUpdate() {
-    // stop here if form is invalid
-    if (this.editedForm.invalid) {
-      return;
-    }
-
-    this.editingTracker = this.trackerReset;
-  }
 
   goToHeroDetail(id: string) {
     this.router.navigateByUrl("/heroes/hero-detail/" + id);
@@ -70,6 +45,4 @@ export class HeroesComponent implements OnInit, OnDestroy {
       knownAs: [""],
     });
   }
-
-  loadingAndErrorInit() {}
 }
