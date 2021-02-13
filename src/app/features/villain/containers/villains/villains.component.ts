@@ -21,6 +21,10 @@ export class VillainsComponent implements OnInit {
     this.formBuilderInit();
   }
 
+  handleNavigateHeroDetail(id: string) {
+    this.router.navigateByUrl("/heroes/hero-detail/" + id);
+  }
+
   private formBuilderInit(): void {
     this.itemForm = this.fb.group({
       firstName: ["", [Validators.required, Validators.minLength(4)]],
